@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +18,7 @@
   #app{position:relative;z-index:1;}
   .screen{display:none;min-height:100vh;}
   .screen.active{display:flex;flex-direction:column;}
- 
+
   /* TITLE */
   #title-screen{align-items:center;justify-content:center;gap:28px;text-align:center;padding:40px 20px;}
   .title-logo{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,15vw,140px);line-height:.9;letter-spacing:4px;background:linear-gradient(135deg,var(--gold) 0%,#fff8e0 50%,var(--gold2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 40px rgba(240,192,96,.4));}
@@ -38,7 +36,7 @@
   .name-avatar{font-size:18px;width:28px;text-align:center;}
   .name-input{flex:1;padding:8px 12px;border-radius:7px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-family:'Space Mono',monospace;font-size:12px;outline:none;transition:border-color .2s;}
   .name-input:focus{border-color:var(--gold2);}
- 
+
   /* GAME */
   #game-screen{padding:10px;gap:8px;}
   .topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:10px;flex-shrink:0;}
@@ -63,7 +61,7 @@
   .total-display.over .total-num{color:var(--red);}
   .penalty-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;}
   .penalty-tag{font-size:9px;padding:2px 8px;border-radius:12px;background:rgba(224,136,48,.15);border:1px solid rgba(224,136,48,.4);color:var(--orange);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
- 
+
   /* CARDS */
   .hand-area{margin-bottom:8px;}
   .hand-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
@@ -81,7 +79,7 @@
   .number-card .card-type-dot{background:var(--blue);}
   .special-card .card-type-dot{background:var(--purple);}
   .card .card-corner{position:absolute;top:4px;left:6px;font-size:10px;color:var(--muted);font-family:'Space Mono',monospace;}
- 
+
   /* ACTION */
   .action-panel{background:var(--surface);border:2px solid var(--gold2);border-radius:14px;padding:14px;box-shadow:0 0 30px rgba(240,192,96,.1);flex-shrink:0;}
   .action-title{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--gold);letter-spacing:2px;margin-bottom:10px;}
@@ -98,7 +96,7 @@
   .btn-action:disabled{opacity:.4;cursor:not-allowed;}
   .btn-danger{padding:8px 20px;border-radius:8px;background:rgba(224,80,80,.1);border:2px solid var(--red);color:var(--red);font-family:'Space Mono',monospace;font-size:12px;cursor:pointer;transition:all .2s;}
   .btn-danger:hover{background:rgba(224,80,80,.25);}
- 
+
   /* PILES */
   .piles-row{display:flex;gap:12px;align-items:center;padding:10px 14px;background:var(--surface2);border-radius:10px;border:1px solid var(--border);}
   .pile-info{display:flex;flex-direction:column;align-items:center;gap:2px;}
@@ -106,7 +104,7 @@
   .pile-count{font-family:'Bebas Neue',sans-serif;font-size:20px;}
   .pile-count.num{color:var(--blue);}.pile-count.spec{color:var(--purple);}
   .pile-div{width:1px;height:30px;background:var(--border);}
- 
+
   /* LOG */
   .log-panel{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-height:100px;overflow-y:auto;flex-shrink:0;}
   .log-panel::-webkit-scrollbar{width:4px;}
@@ -114,7 +112,7 @@
   .log-entry{font-size:11px;color:var(--muted);padding:2px 0;border-bottom:1px solid rgba(255,255,255,.03);}
   .log-entry:last-child{border-bottom:none;}
   .le-player{color:var(--text);font-weight:700;}.le-action{color:var(--gold);}.le-card{color:var(--purple);}.le-win{color:var(--green);font-weight:700;}.le-penalty{color:var(--orange);font-weight:700;}
- 
+
   /* PENALTY SCREEN */
   #penalty-screen{align-items:center;justify-content:center;gap:18px;text-align:center;padding:30px 20px;background:radial-gradient(ellipse at center,rgba(224,136,48,.06) 0%,transparent 70%);}
   .penalty-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(50px,10vw,90px);color:var(--orange);filter:drop-shadow(0 0 20px rgba(224,136,48,.5));letter-spacing:3px;}
@@ -128,7 +126,7 @@
   .penalty-draw-card.revealed{cursor:default;background:linear-gradient(145deg,#281a10,#1a0e08);}
   .penalty-draw-card.disabled{opacity:.3;cursor:default;}
   .penalty-card-inner{display:flex;flex-direction:column;align-items:center;padding:6px;}
- 
+
   /* WIN */
   #win-screen{align-items:center;justify-content:center;gap:18px;text-align:center;padding:40px 20px;}
   .win-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,12vw,100px);background:linear-gradient(135deg,var(--green),#a0ffb0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 30px rgba(80,200,120,.5));}
@@ -136,7 +134,7 @@
   .win-cards{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
   .confetti-dot{position:fixed;pointer-events:none;border-radius:2px;animation:fall linear forwards;}
   @keyframes fall{0%{transform:translateY(-10px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}
- 
+
   /* MODAL */
   .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center;}
   .modal-overlay.open{display:flex;}
@@ -145,7 +143,7 @@
   .modal-body{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;}
   .modal-cards{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
   .modal-btns{display:flex;gap:8px;flex-wrap:wrap;}
- 
+
   /* THINKING */
   .thinking-bar{display:flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(144,96,208,.08);border:1px solid rgba(144,96,208,.2);border-radius:8px;font-size:12px;color:var(--purple);}
   .thinking-dots span{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--purple);margin:0 2px;animation:dot-bounce .8s ease-in-out infinite;}
@@ -157,7 +155,7 @@
 </head>
 <body>
 <div id="app">
- 
+
 <!-- TITLE -->
 <div id="title-screen" class="screen active">
   <div class="title-logo">FIFTY</div>
@@ -178,7 +176,7 @@
     Loss streaks = more penalty cards!
   </div>
 </div>
- 
+
 <!-- GAME -->
 <div id="game-screen" class="screen">
   <div class="topbar">
@@ -203,7 +201,7 @@
     <div class="log-entry"><span style="color:var(--gold)">Game started. Good luck!</span></div>
   </div>
 </div>
- 
+
 <!-- PENALTY SCREEN -->
 <div id="penalty-screen" class="screen">
   <div class="penalty-title">🎭 PENALTY!</div>
@@ -214,7 +212,7 @@
   <div class="penalty-cards-grid" id="penalty-cards-grid"></div>
   <button class="btn-primary" id="penalty-continue-btn" style="display:none" onclick="afterPenalty()">CONTINUE ▶</button>
 </div>
- 
+
 <!-- WIN -->
 <div id="win-screen" class="screen">
   <div class="win-title">WINNER!</div>
@@ -224,9 +222,9 @@
   <div id="win-penalties-section" style="margin-top:10px;width:100%;max-width:500px"></div>
   <button class="btn-primary" onclick="resetGame()">PLAY AGAIN</button>
 </div>
- 
+
 </div>
- 
+
 <!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
@@ -236,7 +234,7 @@
     <div class="modal-btns" id="modal-btns"></div>
   </div>
 </div>
- 
+
 <script>
 // ── PENALTY CARDS (20) ──────────────────────────────
 const PENALTY_CARDS = [
@@ -261,7 +259,7 @@ const PENALTY_CARDS = [
   {icon:'🧙',text:'Talk like a wise wizard all next round'},
   {icon:'👑',text:'Call every player "Your Majesty" next round'},
 ];
- 
+
 // ── GAME DATA ───────────────────────────────────────
 const SPECIAL_CARDS = [
   // +1 x4, +2 x4, +3 x4, +5 x4  (16 plus cards)
@@ -280,9 +278,9 @@ const SPECIAL_CARDS = [
 ];
 const AVATARS=['🟡','🔴','🔵','🟣'];
 const DEFAULT_NAMES=['You','Aiden','Byte','Nova'];
- 
+
 let G={}, playerNames=[], selectedCount=null;
- 
+
 // ── SETUP ───────────────────────────────────────────
 function setPlayerCount(n){
   selectedCount=n;
@@ -304,14 +302,14 @@ document.getElementById('start-btn').addEventListener('click',()=>{
   document.getElementById('log-panel').innerHTML='<div class="log-entry"><span style="color:var(--gold)">Game started. Good luck!</span></div>';
   initGame(selectedCount);
 });
- 
+
 // ── DECKS ───────────────────────────────────────────
 function buildNumDeck(){let d=[];for(let i=0;i<4;i++)for(let n=1;n<=10;n++)d.push({kind:'number',value:n,label:String(n)});return d;}
 function buildSpecDeck(){return SPECIAL_CARDS.map(s=>({kind:'special',...s}));}
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function drawFrom(pile,disc){if(!pile.length){if(!disc.length)return null;pile.push(...shuffle([...disc]));disc.length=0;}return pile.pop();}
 function hSum(p){return p.hand.reduce((s,c)=>s+c.value,0)+(p.bonus||0);}
- 
+
 // ── INIT ────────────────────────────────────────────
 function initGame(n){
   const nd=shuffle(buildNumDeck()),sd=shuffle(buildSpecDeck()),players=[];
@@ -319,7 +317,7 @@ function initGame(n){
   G={players,nd,sd,ndDisc:[],sdDisc:[],cur:0,phase:'draw',drawn:null,drawnFrom:null,selHand:null,selSpec:null,swapTarget:null,swapTargetCard:null,over:false,winner:null,replLeft:0};
   renderAll();updatePanel();
 }
- 
+
 // ── RENDER ──────────────────────────────────────────
 function mkCard(card,opts={}){
   const el=document.createElement('div');
@@ -332,7 +330,7 @@ function mkCard(card,opts={}){
   if(opts.onclick)el.addEventListener('click',opts.onclick);
   return el;
 }
- 
+
 function renderAll(){
   const grid=document.getElementById('players-grid');grid.innerHTML='';
   G.players.forEach(p=>{
@@ -355,10 +353,9 @@ function renderAll(){
     p.hand.forEach((card,i)=>{
       const isRepN=G.phase==='replace'&&G.drawnFrom==='number';
       const isSwap=G.phase==='swap_pick_my_card';
-      const isRepS=G.phase==='replace_special';
       const isSwapT=G.phase==='swap_pick_target_card'&&p.id===G.swapTarget;
-      const sel=(my&&(isRepN||isSwap||isRepS))||isSwapT;
-      const chosen=(my&&G.selHand===i&&(isRepN||isSwap||isRepS))||(isSwapT&&G.swapTargetCard===i);
+      const sel=(my&&(isRepN||isSwap))||isSwapT;
+      const chosen=(my&&G.selHand===i&&(isRepN||isSwap))||(isSwapT&&G.swapTargetCard===i);
       const ce=mkCard(card,{selectable:sel,selected:chosen,onclick:sel?()=>cardClick(p.id,i,'hand'):null});
       if(!p.isHuman)ce.classList.remove('selectable');
       cr.appendChild(ce);
@@ -366,7 +363,7 @@ function renderAll(){
     ha.appendChild(cr);panel.appendChild(ha);
     // specials
     if(p.specials.length){const sa=document.createElement('div');sa.className='hand-area';sa.innerHTML='<div class="hand-label">Special Cards</div>';const sr=document.createElement('div');sr.className='cards-row';
-    p.specials.forEach((card,i)=>{const isRepSp=G.phase==='replace'&&G.drawnFrom==='special';const isPl=G.phase==='play_special';const sel=my&&(isRepSp||isPl);const chosen=G.selSpec===i&&sel;const ce=mkCard(card,{selectable:sel,selected:chosen,onclick:sel?()=>cardClick(p.id,i,'special'):null});if(!p.isHuman)ce.classList.remove('selectable');sr.appendChild(ce);});sa.appendChild(sr);panel.appendChild(sa);}
+    p.specials.forEach((card,i)=>{const sel=my&&G.phase==='draw';const ce=mkCard(card,{selectable:sel,onclick:sel?()=>playStoredSpec(i):null});if(!p.isHuman)ce.classList.remove('selectable');sr.appendChild(ce);});sa.appendChild(sr);panel.appendChild(sa);}
     grid.appendChild(panel);
   });
   document.getElementById('num-pile-count').textContent=G.nd.length+G.ndDisc.length;
@@ -374,7 +371,7 @@ function renderAll(){
   const cp=G.players[G.cur];
   document.getElementById('turn-badge').textContent=cp.isHuman?'YOUR TURN':cp.name.toUpperCase()+"'S TURN";
 }
- 
+
 // ── ACTION PANEL ────────────────────────────────────
 function updatePanel(){
   const panel=document.getElementById('action-panel');
@@ -385,58 +382,111 @@ function updatePanel(){
   const H=(t)=>{const d=document.createElement('div');d.style.cssText='font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:6px';d.textContent=t;panel.appendChild(d);};
   const R=()=>{const r=document.createElement('div');r.className='step-row';r.style.marginTop='8px';panel.appendChild(r);return r;};
   const btn=(cls,txt,fn)=>{const b=document.createElement('button');b.className=cls;b.textContent=txt;b.onclick=fn;return b;};
- 
+
   if(G.phase==='draw'){
-    T('STEP 1 — DRAW A CARD');
+    T('YOUR TURN');
+    H('Draw a number card to swap it, OR draw a special card to use/save it.');
     const r=R();
-    r.appendChild(btn('draw-btn num','Draw Number',()=>humanDraw('number')));
-    r.appendChild(btn('draw-btn spec','Draw Special',()=>humanDraw('special')));
-  } else if(G.phase==='replace'){
-    T(G.drawnFrom==='number'?'STEP 2 — REPLACE A NUMBER CARD':'STEP 2 — MANAGE SPECIAL CARD');
-    const pv=document.createElement('div');pv.className='drawn-card-preview';pv.innerHTML=`Drew: <strong style="color:${G.drawnFrom==='number'?'var(--blue)':'var(--purple)'}">${G.drawn.label}</strong>`;panel.appendChild(pv);
-    if(G.drawnFrom==='number'){
-      H('Click a number card in your hand to replace it.');
-      if(G.selHand!==null){const r=R();r.appendChild(btn('btn-action','Confirm Replace',confirmRepNum));r.appendChild(btn('btn-danger','Discard Drawn',discardDrawn));}
-    } else {
-      if(cp.specials.length<2){const r=R();r.appendChild(btn('btn-action','Add to Hand',addSpecial));r.appendChild(btn('btn-danger','Discard',discardDrawn));}
-      else{H('Hand full. Click a special to replace, or discard.');if(G.selSpec!==null){const r=R();r.appendChild(btn('btn-action','Replace Selected',confirmRepSpec));r.appendChild(btn('btn-danger','Discard Drawn',discardDrawn));}}
+    r.appendChild(btn('draw-btn num','Draw Number Card',()=>humanDraw('number')));
+    r.appendChild(btn('draw-btn spec','Draw Special Card',()=>humanDraw('special')));
+    // Show stored specials to play as alternative action
+    if(cp.specials.length>0){
+      const sr=document.createElement('div');sr.style.cssText='margin-top:10px;border-top:1px solid var(--border);padding-top:10px;';
+      sr.innerHTML='<div style="font-size:11px;color:var(--muted);letter-spacing:2px;margin-bottom:6px">SAVED SPECIALS (play as your whole turn):</div>';
+      const row=document.createElement('div');row.className='step-row';
+      cp.specials.forEach((sc,i)=>{
+        const b=document.createElement('button');
+        b.className='draw-btn spec';
+        const previewSum=sc.type==='add'||sc.type==='sub'?hSum(cp)+sc.value:null;
+        b.textContent=`Play ${sc.label}${previewSum!==null?' → '+previewSum:''}`;
+        b.style.color=previewSum===50?'var(--green)':previewSum>50?'var(--red)':'';
+        b.onclick=()=>playStoredSpec(i, false);
+        row.appendChild(b);
+      });
+      sr.appendChild(row);panel.appendChild(sr);
     }
-  } else if(G.phase==='play_special'){
-    T('STEP 3 — PLAY A SPECIAL? (Optional)');H('Click a special card to play it, or skip.');
+  } else if(G.phase==='use_special_now'){
+    T('SPECIAL CARD DRAWN!');
+    const pv=document.createElement('div');pv.className='drawn-card-preview';
+    const isPlus=G.drawn.type==='add',isMinus=G.drawn.type==='sub',isSwap=G.drawn.type==='swap';
+    const col=isPlus?'var(--green)':isMinus?'var(--red)':'var(--purple)';
+    const curSum=hSum(cp);
+    const newSum=isPlus||isMinus?curSum+G.drawn.value:null;
+    pv.innerHTML=`Drew: <strong style="color:${col};font-size:16px">${G.drawn.label}</strong>${newSum!==null?` &nbsp;→&nbsp; <strong style="color:${newSum===50?'var(--green)':newSum>50?'var(--red)':'var(--gold)'}">${curSum} → ${newSum}</strong>`:''}`;
+    panel.appendChild(pv);
+    H('Using this card ends your turn. Saving it uses your turn too.');
     const r=R();
-    if(G.selSpec!==null)r.appendChild(btn('btn-action','Play Selected',playSpec));
-    r.appendChild(btn('btn-danger','Skip / End Turn',endTurn));
+    r.appendChild(btn('btn-action',isSwap?'Use SWAP (end turn)':`Apply ${G.drawn.label} → ${newSum??''} (end turn)`,useSpecialNow));
+    r.appendChild(btn('draw-btn spec','Save for Later (end turn)',keepSpecial));
+    r.appendChild(btn('btn-danger','Discard (end turn)',discardDrawn));
+  } else if(G.phase==='replace'){
+    T('SWAP A NUMBER CARD');
+    const pv=document.createElement('div');pv.className='drawn-card-preview';pv.innerHTML=`Drew: <strong style="color:var(--blue)">${G.drawn.label}</strong>`;panel.appendChild(pv);
+    H('Click a number card in your hand to replace it, or discard.');
+    if(G.selHand!==null){const r=R();r.appendChild(btn('btn-action','Confirm Replace',confirmRepNum));r.appendChild(btn('btn-danger','Discard Drawn',discardDrawn));}
+    else{const r=R();r.appendChild(btn('btn-danger','Discard Drawn',discardDrawn));}
+  } else if(G.phase==='play_special'){
+    T('BONUS — PLAY A SPECIAL CARD?');
+    H('You already replaced your number card. Now you can also play a special, or skip.');
+    const curSum=hSum(cp);
+    const row=document.createElement('div');row.className='step-row';row.style.marginTop='8px';
+    cp.specials.forEach((sc,i)=>{
+      const newSum=sc.type==='add'||sc.type==='sub'?curSum+sc.value:null;
+      const b=document.createElement('button');
+      b.className='draw-btn spec';
+      b.style.cssText=`border-color:${newSum===50?'var(--green)':newSum>50?'var(--red)':'var(--purple)'};color:${newSum===50?'var(--green)':newSum>50?'var(--red)':'var(--purple)'}`;
+      b.textContent=`${sc.label}${newSum!==null?' → '+newSum:''}`;
+      b.onclick=()=>{playStoredSpec(i, true);};
+      row.appendChild(b);
+    });
+    panel.appendChild(row);
+    const r=R();r.appendChild(btn('btn-danger','Skip — End Turn',endTurn));
+  } else if(G.phase==='end_turn'){
+    T('ACTION DONE');
+    const r=R();r.appendChild(btn('btn-action','End Turn →',endTurn));
   } else if(G.phase==='swap_pick_my_card'){T('SWAP — PICK YOUR CARD');H('Click one of your number cards to swap.');}
   else if(G.phase==='swap_pick_target_card'){T('SWAP — PICK OPPONENT CARD');H('Click a card from the target player.');const r=R();r.appendChild(btn('btn-danger','Cancel Swap',cancelSwap));}
-  else if(G.phase==='replace_special'){T('REPLACE ALL — PICK CARD TO REMOVE');H(`Click a card to replace it (${G.replLeft} remaining).`);const r=R();if(G.selHand!==null)r.appendChild(btn('btn-action','Confirm Replace',confirmRepAllStep));r.appendChild(btn('btn-danger','Done',()=>{G.phase='done';endTurn();}));}
 }
- 
+
 // ── HUMAN ACTIONS ───────────────────────────────────
 function humanDraw(from){
   const card=from==='number'?drawFrom(G.nd,G.ndDisc):drawFrom(G.sd,G.sdDisc);
   if(!card){log('No cards left!','System');return;}
-  G.drawn=card;G.drawnFrom=from;G.phase='replace';
+  G.drawn=card;G.drawnFrom=from;
+  if(from==='special'){
+    // Special card: show use-now options immediately
+    G.phase='use_special_now';
+  } else {
+    G.phase='replace';
+  }
   log(`drew a ${from} card`,G.players[G.cur].name,card.label);
   renderAll();updatePanel();
 }
 function cardClick(pid,idx,type){
   if(G.phase==='replace'&&G.drawnFrom==='number'&&type==='hand')G.selHand=G.selHand===idx?null:idx;
-  else if(G.phase==='replace'&&G.drawnFrom==='special'&&type==='special')G.selSpec=G.selSpec===idx?null:idx;
-  else if(G.phase==='play_special'&&type==='special')G.selSpec=G.selSpec===idx?null:idx;
   else if(G.phase==='swap_pick_my_card'&&type==='hand'){G.selHand=idx;G.phase='swap_pick_target_card';showSwapModal();return;}
   else if(G.phase==='swap_pick_target_card'&&pid===G.swapTarget&&type==='hand'){G.swapTargetCard=idx;doSwap();return;}
-  else if(G.phase==='replace_special'&&type==='hand')G.selHand=G.selHand===idx?null:idx;
   renderAll();updatePanel();
 }
-function confirmRepNum(){const cp=G.players[G.cur];const old=cp.hand[G.selHand];G.ndDisc.push(old);cp.hand[G.selHand]=G.drawn;log(`replaced ${old.label} with ${G.drawn.label}`,cp.name);G.drawn=null;G.drawnFrom=null;G.selHand=null;G.phase='play_special';checkWin();renderAll();updatePanel();}
-function discardDrawn(){if(G.drawnFrom==='number')G.ndDisc.push(G.drawn);else G.sdDisc.push(G.drawn);log(`discarded ${G.drawn.label}`,G.players[G.cur].name);G.drawn=null;G.drawnFrom=null;G.selHand=null;G.selSpec=null;G.phase='play_special';renderAll();updatePanel();}
-function addSpecial(){const cp=G.players[G.cur];cp.specials.push(G.drawn);log(`kept special ${G.drawn.label}`,cp.name);G.drawn=null;G.drawnFrom=null;G.phase='play_special';renderAll();updatePanel();}
-function confirmRepSpec(){const cp=G.players[G.cur];const old=cp.specials[G.selSpec];G.sdDisc.push(old);cp.specials[G.selSpec]=G.drawn;log(`replaced ${old.label} with ${G.drawn.label}`,cp.name);G.drawn=null;G.drawnFrom=null;G.selSpec=null;G.phase='play_special';renderAll();updatePanel();}
-function playSpec(){
-  const cp=G.players[G.cur];const card=cp.specials[G.selSpec];
-  if(card.type==='swap'){cp.specials.splice(G.selSpec,1);G.sdDisc.push(card);G.selSpec=null;G.phase='swap_pick_my_card';log(`plays SWAP`,cp.name,'SWAP');renderAll();updatePanel();}
-  else if(card.type==='replace_all'){cp.specials.splice(G.selSpec,1);G.sdDisc.push(card);G.selSpec=null;G.replLeft=5;G.phase='replace_special';log(`plays REPLACE ALL`,cp.name);renderAll();updatePanel();}
-  else{cp.specials.splice(G.selSpec,1);G.sdDisc.push(card);applyVal(cp,card.value);G.selSpec=null;checkWin();G.phase='done';endTurn();}
+function confirmRepNum(){const cp=G.players[G.cur];const old=cp.hand[G.selHand];G.ndDisc.push(old);cp.hand[G.selHand]=G.drawn;log(`replaced ${old.label} with ${G.drawn.label}`,cp.name);G.drawn=null;G.drawnFrom=null;G.selHand=null;checkWin();if(!G.over){if(cp.specials.length>0){G.phase='play_special';renderAll();updatePanel();}else{endTurn();}}}
+function discardDrawn(){if(G.drawnFrom==='number'){G.ndDisc.push(G.drawn);const cp=G.players[G.cur];log(`discarded ${G.drawn.label}`,cp.name);G.drawn=null;G.drawnFrom=null;G.selHand=null;G.selSpec=null;if(cp.specials.length>0){G.phase='play_special';renderAll();updatePanel();}else{endTurn();}}else{G.sdDisc.push(G.drawn);log(`discarded ${G.drawn.label}`,G.players[G.cur].name);G.drawn=null;G.drawnFrom=null;G.selHand=null;G.selSpec=null;endTurn();}}
+function useSpecialNow(){
+  const cp=G.players[G.cur];const card=G.drawn;
+  G.sdDisc.push(card);G.drawn=null;G.drawnFrom=null;
+  if(card.type==='swap'){G.phase='swap_pick_my_card';log(`plays SWAP`,cp.name,'SWAP');renderAll();updatePanel();}
+  else{applyVal(cp,card.value);checkWin();if(!G.over)endTurn();}
+}
+function keepSpecial(){
+  const cp=G.players[G.cur];
+  if(cp.specials.length<2){cp.specials.push(G.drawn);log(`kept special ${G.drawn.label}`,cp.name);}
+  else{const old=cp.specials.shift();G.sdDisc.push(old);cp.specials.push(G.drawn);log(`replaced ${old.label} with ${G.drawn.label}`,cp.name);}
+  G.drawn=null;G.drawnFrom=null;endTurn();
+}
+function playStoredSpec(idx, afterDraw){
+  const cp=G.players[G.cur];const card=cp.specials[idx];
+  cp.specials.splice(idx,1);G.sdDisc.push(card);
+  if(card.type==='swap'){G.phase='swap_pick_my_card';log(`plays SWAP`,cp.name,'SWAP');renderAll();updatePanel();}
+  else{applyVal(cp,card.value);checkWin();if(!G.over){if(afterDraw){endTurn();}else{G.phase='draw';renderAll();updatePanel();}}}
 }
 function applyVal(p,d){p.bonus+=d;log(`applied ${d>0?'+':''}${d} to total (now ${hSum(p)})`,p.name);}
 function showSwapModal(){
@@ -453,18 +503,17 @@ function showSwapModal(){
   const c=document.createElement('button');c.className='btn-danger';c.textContent='Cancel';c.onclick=()=>{ov.classList.remove('open');cancelSwap();};btns.appendChild(c);
   ov.classList.add('open');
 }
-function doSwap(){const cp=G.players[G.cur];const tp=G.players[G.swapTarget];const mc=cp.hand[G.selHand];const tc=tp.hand[G.swapTargetCard];cp.hand[G.selHand]=tc;tp.hand[G.swapTargetCard]=mc;log(`swapped ${mc.label}↔${tc.label} with ${tp.name}`,cp.name);G.selHand=null;G.swapTarget=null;G.swapTargetCard=null;G.phase='done';checkWin();endTurn();}
-function cancelSwap(){G.selHand=null;G.swapTarget=null;G.swapTargetCard=null;G.phase='play_special';renderAll();updatePanel();}
-function confirmRepAllStep(){const cp=G.players[G.cur];const old=cp.hand[G.selHand];const nc=drawFrom(G.nd,G.ndDisc);if(nc){G.ndDisc.push(old);cp.hand[G.selHand]=nc;log(`replaced ${old.label} with ${nc.label}`,cp.name);}G.replLeft--;G.selHand=null;checkWin();if(G.replLeft<=0){G.phase='done';endTurn();}else{renderAll();updatePanel();}}
- 
+function doSwap(){const cp=G.players[G.cur];const tp=G.players[G.swapTarget];const mc=cp.hand[G.selHand];const tc=tp.hand[G.swapTargetCard];cp.hand[G.selHand]=tc;tp.hand[G.swapTargetCard]=mc;log(`swapped ${mc.label}↔${tc.label} with ${tp.name}`,cp.name);G.selHand=null;G.swapTarget=null;G.swapTargetCard=null;checkWin();if(!G.over)endTurn();}
+function cancelSwap(){G.selHand=null;G.swapTarget=null;G.swapTargetCard=null;G.phase='draw';renderAll();updatePanel();}
+
 function endTurn(){
-  G.selHand=null;G.selSpec=null;G.drawn=null;G.drawnFrom=null;G.phase='draw';
+  G.selHand=null;G.selSpec=null;G.drawn=null;G.drawnFrom=null;G.replLeft=0;G.phase='draw';
   G.cur=(G.cur+1)%G.players.length;
   renderAll();updatePanel();
   const cp=G.players[G.cur];
   if(!cp.isHuman&&!G.over)setTimeout(aiTurn,600);
 }
- 
+
 // ── WIN CHECK ────────────────────────────────────────
 function checkWin(){
   const cp=G.players[G.cur];
@@ -474,7 +523,7 @@ function checkWin(){
     setTimeout(()=>startPenalty(cp),800);
   }
 }
- 
+
 // ── PENALTY PHASE ────────────────────────────────────
 function startPenalty(winner){
   const losers=G.players.filter(p=>p.id!==winner.id).sort((a,b)=>Math.abs(hSum(b)-50)-Math.abs(hSum(a)-50));
@@ -483,7 +532,7 @@ function startPenalty(winner){
   G.players.forEach(p=>{if(p.id!==loser.id)p.lossStreak=0;});
   const n=Math.min(loser.lossStreak,3);
   loser.activePenalties=[];
- 
+
   setScreen('penalty-screen');
   document.getElementById('penalty-loser-name').textContent=`${loser.avatar} ${loser.name} takes the penalty!`;
   document.getElementById('penalty-diff-text').textContent=`Total: ${hSum(loser)} — ${Math.abs(hSum(loser)-50)} away from 50`;
@@ -491,7 +540,7 @@ function startPenalty(winner){
   if(loser.lossStreak>1){si.style.display='block';si.textContent=`🔥 ${loser.lossStreak}-loss streak! Draw ${n} penalty card${n>1?'s':''}!`;}
   else si.style.display='none';
   document.getElementById('penalty-instructions').textContent=`${loser.name}, flip ${n} card${n>1?'s':''} to reveal your penalt${n>1?'ies':'y'}!`;
- 
+
   // Build 20-card grid — n of them are "real" chosen cards, rest are decoys (still funny though)
   const chosen=shuffle([...PENALTY_CARDS]).slice(0,n);
   const allShuffled=shuffle([...PENALTY_CARDS]);
@@ -499,7 +548,7 @@ function startPenalty(winner){
   const grid=document.getElementById('penalty-cards-grid');grid.innerHTML='';
   document.getElementById('penalty-continue-btn').style.display='none';
   let revealed=0;
- 
+
   for(let i=0;i<20;i++){
     const isReal=positions.includes(i);
     const cardData=isReal?chosen[positions.indexOf(i)]:allShuffled[i%allShuffled.length];
@@ -523,9 +572,9 @@ function startPenalty(winner){
     grid.appendChild(slot);
   }
 }
- 
+
 function afterPenalty(){showWinScreen(G.winner);}
- 
+
 // ── AI TURN ──────────────────────────────────────────
 async function aiTurn(){
   if(G.over)return;
@@ -574,7 +623,7 @@ function aiSwap(ai){
   if(bt&&bg>0){const mc=ai.hand[bmi],tc=bt.hand[bti];ai.hand[bmi]=tc;bt.hand[bti]=mc;log(`swapped ${mc.label}↔${tc.label} with ${bt.name}`,ai.name);}
 }
 function aiEnd(){G.cur=(G.cur+1)%G.players.length;G.phase='draw';renderAll();updatePanel();const cp=G.players[G.cur];if(!cp.isHuman&&!G.over)setTimeout(aiTurn,600);}
- 
+
 // ── WIN SCREEN ───────────────────────────────────────
 function showWinScreen(winner){
   setScreen('win-screen');
@@ -594,7 +643,7 @@ function showWinScreen(winner){
   }
   spawnConfetti();
 }
- 
+
 // ── UTILS ────────────────────────────────────────────
 function log(action,player,card,isWin,isPenalty){
   const logEl=document.getElementById('log-panel');
