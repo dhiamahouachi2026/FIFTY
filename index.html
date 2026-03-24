@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SUM 50 — Card Game</title>
+<title>FIFTY — Card Game</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -18,7 +20,7 @@
   #app{position:relative;z-index:1;}
   .screen{display:none;min-height:100vh;}
   .screen.active{display:flex;flex-direction:column;}
-
+ 
   /* TITLE */
   #title-screen{align-items:center;justify-content:center;gap:28px;text-align:center;padding:40px 20px;}
   .title-logo{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,15vw,140px);line-height:.9;letter-spacing:4px;background:linear-gradient(135deg,var(--gold) 0%,#fff8e0 50%,var(--gold2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 40px rgba(240,192,96,.4));}
@@ -36,7 +38,7 @@
   .name-avatar{font-size:18px;width:28px;text-align:center;}
   .name-input{flex:1;padding:8px 12px;border-radius:7px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-family:'Space Mono',monospace;font-size:12px;outline:none;transition:border-color .2s;}
   .name-input:focus{border-color:var(--gold2);}
-
+ 
   /* GAME */
   #game-screen{padding:10px;gap:8px;}
   .topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:10px;flex-shrink:0;}
@@ -61,7 +63,7 @@
   .total-display.over .total-num{color:var(--red);}
   .penalty-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;}
   .penalty-tag{font-size:9px;padding:2px 8px;border-radius:12px;background:rgba(224,136,48,.15);border:1px solid rgba(224,136,48,.4);color:var(--orange);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-
+ 
   /* CARDS */
   .hand-area{margin-bottom:8px;}
   .hand-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
@@ -79,7 +81,7 @@
   .number-card .card-type-dot{background:var(--blue);}
   .special-card .card-type-dot{background:var(--purple);}
   .card .card-corner{position:absolute;top:4px;left:6px;font-size:10px;color:var(--muted);font-family:'Space Mono',monospace;}
-
+ 
   /* ACTION */
   .action-panel{background:var(--surface);border:2px solid var(--gold2);border-radius:14px;padding:14px;box-shadow:0 0 30px rgba(240,192,96,.1);flex-shrink:0;}
   .action-title{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--gold);letter-spacing:2px;margin-bottom:10px;}
@@ -96,7 +98,7 @@
   .btn-action:disabled{opacity:.4;cursor:not-allowed;}
   .btn-danger{padding:8px 20px;border-radius:8px;background:rgba(224,80,80,.1);border:2px solid var(--red);color:var(--red);font-family:'Space Mono',monospace;font-size:12px;cursor:pointer;transition:all .2s;}
   .btn-danger:hover{background:rgba(224,80,80,.25);}
-
+ 
   /* PILES */
   .piles-row{display:flex;gap:12px;align-items:center;padding:10px 14px;background:var(--surface2);border-radius:10px;border:1px solid var(--border);}
   .pile-info{display:flex;flex-direction:column;align-items:center;gap:2px;}
@@ -104,7 +106,7 @@
   .pile-count{font-family:'Bebas Neue',sans-serif;font-size:20px;}
   .pile-count.num{color:var(--blue);}.pile-count.spec{color:var(--purple);}
   .pile-div{width:1px;height:30px;background:var(--border);}
-
+ 
   /* LOG */
   .log-panel{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-height:100px;overflow-y:auto;flex-shrink:0;}
   .log-panel::-webkit-scrollbar{width:4px;}
@@ -112,7 +114,7 @@
   .log-entry{font-size:11px;color:var(--muted);padding:2px 0;border-bottom:1px solid rgba(255,255,255,.03);}
   .log-entry:last-child{border-bottom:none;}
   .le-player{color:var(--text);font-weight:700;}.le-action{color:var(--gold);}.le-card{color:var(--purple);}.le-win{color:var(--green);font-weight:700;}.le-penalty{color:var(--orange);font-weight:700;}
-
+ 
   /* PENALTY SCREEN */
   #penalty-screen{align-items:center;justify-content:center;gap:18px;text-align:center;padding:30px 20px;background:radial-gradient(ellipse at center,rgba(224,136,48,.06) 0%,transparent 70%);}
   .penalty-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(50px,10vw,90px);color:var(--orange);filter:drop-shadow(0 0 20px rgba(224,136,48,.5));letter-spacing:3px;}
@@ -126,7 +128,7 @@
   .penalty-draw-card.revealed{cursor:default;background:linear-gradient(145deg,#281a10,#1a0e08);}
   .penalty-draw-card.disabled{opacity:.3;cursor:default;}
   .penalty-card-inner{display:flex;flex-direction:column;align-items:center;padding:6px;}
-
+ 
   /* WIN */
   #win-screen{align-items:center;justify-content:center;gap:18px;text-align:center;padding:40px 20px;}
   .win-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,12vw,100px);background:linear-gradient(135deg,var(--green),#a0ffb0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 30px rgba(80,200,120,.5));}
@@ -134,7 +136,7 @@
   .win-cards{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
   .confetti-dot{position:fixed;pointer-events:none;border-radius:2px;animation:fall linear forwards;}
   @keyframes fall{0%{transform:translateY(-10px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}
-
+ 
   /* MODAL */
   .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center;}
   .modal-overlay.open{display:flex;}
@@ -143,7 +145,7 @@
   .modal-body{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;}
   .modal-cards{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
   .modal-btns{display:flex;gap:8px;flex-wrap:wrap;}
-
+ 
   /* THINKING */
   .thinking-bar{display:flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(144,96,208,.08);border:1px solid rgba(144,96,208,.2);border-radius:8px;font-size:12px;color:var(--purple);}
   .thinking-dots span{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--purple);margin:0 2px;animation:dot-bounce .8s ease-in-out infinite;}
@@ -155,10 +157,10 @@
 </head>
 <body>
 <div id="app">
-
+ 
 <!-- TITLE -->
 <div id="title-screen" class="screen active">
-  <div class="title-logo">SUM<br>50</div>
+  <div class="title-logo">FIFTY</div>
   <div class="title-sub">The Strategic Card Game</div>
   <div class="player-setup">
     <div class="setup-label">Number of Players</div>
@@ -176,11 +178,11 @@
     Loss streaks = more penalty cards!
   </div>
 </div>
-
+ 
 <!-- GAME -->
 <div id="game-screen" class="screen">
   <div class="topbar">
-    <div class="topbar-title">SUM 50</div>
+    <div class="topbar-title">FIFTY</div>
     <div class="turn-badge" id="turn-badge">—</div>
     <div style="display:flex;gap:6px;align-items:center">
       <div class="piles-row" style="padding:4px 10px">
@@ -201,7 +203,7 @@
     <div class="log-entry"><span style="color:var(--gold)">Game started. Good luck!</span></div>
   </div>
 </div>
-
+ 
 <!-- PENALTY SCREEN -->
 <div id="penalty-screen" class="screen">
   <div class="penalty-title">🎭 PENALTY!</div>
@@ -212,7 +214,7 @@
   <div class="penalty-cards-grid" id="penalty-cards-grid"></div>
   <button class="btn-primary" id="penalty-continue-btn" style="display:none" onclick="afterPenalty()">CONTINUE ▶</button>
 </div>
-
+ 
 <!-- WIN -->
 <div id="win-screen" class="screen">
   <div class="win-title">WINNER!</div>
@@ -222,9 +224,9 @@
   <div id="win-penalties-section" style="margin-top:10px;width:100%;max-width:500px"></div>
   <button class="btn-primary" onclick="resetGame()">PLAY AGAIN</button>
 </div>
-
+ 
 </div>
-
+ 
 <!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
@@ -234,7 +236,7 @@
     <div class="modal-btns" id="modal-btns"></div>
   </div>
 </div>
-
+ 
 <script>
 // ── PENALTY CARDS (20) ──────────────────────────────
 const PENALTY_CARDS = [
@@ -259,18 +261,28 @@ const PENALTY_CARDS = [
   {icon:'🧙',text:'Talk like a wise wizard all next round'},
   {icon:'👑',text:'Call every player "Your Majesty" next round'},
 ];
-
+ 
 // ── GAME DATA ───────────────────────────────────────
 const SPECIAL_CARDS = [
-  {id:'p2',label:'+2',value:2,type:'add'},{id:'p3',label:'+3',value:3,type:'add'},{id:'p5',label:'+5',value:5,type:'add'},
-  {id:'m2',label:'−2',value:-2,type:'sub'},{id:'m3',label:'−3',value:-3,type:'sub'},{id:'m5',label:'−5',value:-5,type:'sub'},
-  {id:'sw',label:'SWAP',value:0,type:'swap'},{id:'ra',label:'REPL\nALL',value:0,type:'replace_all'},
+  // +1 x4, +2 x4, +3 x4, +5 x4  (16 plus cards)
+  {id:'p1a',label:'+1',value:1,type:'add'},{id:'p1b',label:'+1',value:1,type:'add'},{id:'p1c',label:'+1',value:1,type:'add'},{id:'p1d',label:'+1',value:1,type:'add'},
+  {id:'p2a',label:'+2',value:2,type:'add'},{id:'p2b',label:'+2',value:2,type:'add'},{id:'p2c',label:'+2',value:2,type:'add'},{id:'p2d',label:'+2',value:2,type:'add'},
+  {id:'p3a',label:'+3',value:3,type:'add'},{id:'p3b',label:'+3',value:3,type:'add'},{id:'p3c',label:'+3',value:3,type:'add'},{id:'p3d',label:'+3',value:3,type:'add'},
+  {id:'p5a',label:'+5',value:5,type:'add'},{id:'p5b',label:'+5',value:5,type:'add'},{id:'p5c',label:'+5',value:5,type:'add'},{id:'p5d',label:'+5',value:5,type:'add'},
+  // −1 x1, −2 x1, −3 x1, −4 x1, −5 x1  (5 minus cards)
+  {id:'m1',label:'−1',value:-1,type:'sub'},
+  {id:'m2',label:'−2',value:-2,type:'sub'},
+  {id:'m3',label:'−3',value:-3,type:'sub'},
+  {id:'m4',label:'−4',value:-4,type:'sub'},
+  {id:'m5',label:'−5',value:-5,type:'sub'},
+  // SWAP x2
+  {id:'sw1',label:'SWAP',value:0,type:'swap'},{id:'sw2',label:'SWAP',value:0,type:'swap'},
 ];
 const AVATARS=['🟡','🔴','🔵','🟣'];
 const DEFAULT_NAMES=['You','Aiden','Byte','Nova'];
-
+ 
 let G={}, playerNames=[], selectedCount=null;
-
+ 
 // ── SETUP ───────────────────────────────────────────
 function setPlayerCount(n){
   selectedCount=n;
@@ -292,14 +304,14 @@ document.getElementById('start-btn').addEventListener('click',()=>{
   document.getElementById('log-panel').innerHTML='<div class="log-entry"><span style="color:var(--gold)">Game started. Good luck!</span></div>';
   initGame(selectedCount);
 });
-
+ 
 // ── DECKS ───────────────────────────────────────────
-function buildNumDeck(){let d=[];for(let i=0;i<6;i++)for(let n=1;n<=10;n++)d.push({kind:'number',value:n,label:String(n)});return d;}
-function buildSpecDeck(){let d=[];for(let i=0;i<4;i++)SPECIAL_CARDS.forEach(s=>d.push({kind:'special',...s}));return d;}
+function buildNumDeck(){let d=[];for(let i=0;i<4;i++)for(let n=1;n<=10;n++)d.push({kind:'number',value:n,label:String(n)});return d;}
+function buildSpecDeck(){return SPECIAL_CARDS.map(s=>({kind:'special',...s}));}
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function drawFrom(pile,disc){if(!pile.length){if(!disc.length)return null;pile.push(...shuffle([...disc]));disc.length=0;}return pile.pop();}
 function hSum(p){return p.hand.reduce((s,c)=>s+c.value,0)+(p.bonus||0);}
-
+ 
 // ── INIT ────────────────────────────────────────────
 function initGame(n){
   const nd=shuffle(buildNumDeck()),sd=shuffle(buildSpecDeck()),players=[];
@@ -307,7 +319,7 @@ function initGame(n){
   G={players,nd,sd,ndDisc:[],sdDisc:[],cur:0,phase:'draw',drawn:null,drawnFrom:null,selHand:null,selSpec:null,swapTarget:null,swapTargetCard:null,over:false,winner:null,replLeft:0};
   renderAll();updatePanel();
 }
-
+ 
 // ── RENDER ──────────────────────────────────────────
 function mkCard(card,opts={}){
   const el=document.createElement('div');
@@ -320,7 +332,7 @@ function mkCard(card,opts={}){
   if(opts.onclick)el.addEventListener('click',opts.onclick);
   return el;
 }
-
+ 
 function renderAll(){
   const grid=document.getElementById('players-grid');grid.innerHTML='';
   G.players.forEach(p=>{
@@ -362,7 +374,7 @@ function renderAll(){
   const cp=G.players[G.cur];
   document.getElementById('turn-badge').textContent=cp.isHuman?'YOUR TURN':cp.name.toUpperCase()+"'S TURN";
 }
-
+ 
 // ── ACTION PANEL ────────────────────────────────────
 function updatePanel(){
   const panel=document.getElementById('action-panel');
@@ -373,7 +385,7 @@ function updatePanel(){
   const H=(t)=>{const d=document.createElement('div');d.style.cssText='font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:6px';d.textContent=t;panel.appendChild(d);};
   const R=()=>{const r=document.createElement('div');r.className='step-row';r.style.marginTop='8px';panel.appendChild(r);return r;};
   const btn=(cls,txt,fn)=>{const b=document.createElement('button');b.className=cls;b.textContent=txt;b.onclick=fn;return b;};
-
+ 
   if(G.phase==='draw'){
     T('STEP 1 — DRAW A CARD');
     const r=R();
@@ -398,7 +410,7 @@ function updatePanel(){
   else if(G.phase==='swap_pick_target_card'){T('SWAP — PICK OPPONENT CARD');H('Click a card from the target player.');const r=R();r.appendChild(btn('btn-danger','Cancel Swap',cancelSwap));}
   else if(G.phase==='replace_special'){T('REPLACE ALL — PICK CARD TO REMOVE');H(`Click a card to replace it (${G.replLeft} remaining).`);const r=R();if(G.selHand!==null)r.appendChild(btn('btn-action','Confirm Replace',confirmRepAllStep));r.appendChild(btn('btn-danger','Done',()=>{G.phase='done';endTurn();}));}
 }
-
+ 
 // ── HUMAN ACTIONS ───────────────────────────────────
 function humanDraw(from){
   const card=from==='number'?drawFrom(G.nd,G.ndDisc):drawFrom(G.sd,G.sdDisc);
@@ -444,7 +456,7 @@ function showSwapModal(){
 function doSwap(){const cp=G.players[G.cur];const tp=G.players[G.swapTarget];const mc=cp.hand[G.selHand];const tc=tp.hand[G.swapTargetCard];cp.hand[G.selHand]=tc;tp.hand[G.swapTargetCard]=mc;log(`swapped ${mc.label}↔${tc.label} with ${tp.name}`,cp.name);G.selHand=null;G.swapTarget=null;G.swapTargetCard=null;G.phase='done';checkWin();endTurn();}
 function cancelSwap(){G.selHand=null;G.swapTarget=null;G.swapTargetCard=null;G.phase='play_special';renderAll();updatePanel();}
 function confirmRepAllStep(){const cp=G.players[G.cur];const old=cp.hand[G.selHand];const nc=drawFrom(G.nd,G.ndDisc);if(nc){G.ndDisc.push(old);cp.hand[G.selHand]=nc;log(`replaced ${old.label} with ${nc.label}`,cp.name);}G.replLeft--;G.selHand=null;checkWin();if(G.replLeft<=0){G.phase='done';endTurn();}else{renderAll();updatePanel();}}
-
+ 
 function endTurn(){
   G.selHand=null;G.selSpec=null;G.drawn=null;G.drawnFrom=null;G.phase='draw';
   G.cur=(G.cur+1)%G.players.length;
@@ -452,7 +464,7 @@ function endTurn(){
   const cp=G.players[G.cur];
   if(!cp.isHuman&&!G.over)setTimeout(aiTurn,600);
 }
-
+ 
 // ── WIN CHECK ────────────────────────────────────────
 function checkWin(){
   const cp=G.players[G.cur];
@@ -462,7 +474,7 @@ function checkWin(){
     setTimeout(()=>startPenalty(cp),800);
   }
 }
-
+ 
 // ── PENALTY PHASE ────────────────────────────────────
 function startPenalty(winner){
   const losers=G.players.filter(p=>p.id!==winner.id).sort((a,b)=>Math.abs(hSum(b)-50)-Math.abs(hSum(a)-50));
@@ -471,7 +483,7 @@ function startPenalty(winner){
   G.players.forEach(p=>{if(p.id!==loser.id)p.lossStreak=0;});
   const n=Math.min(loser.lossStreak,3);
   loser.activePenalties=[];
-
+ 
   setScreen('penalty-screen');
   document.getElementById('penalty-loser-name').textContent=`${loser.avatar} ${loser.name} takes the penalty!`;
   document.getElementById('penalty-diff-text').textContent=`Total: ${hSum(loser)} — ${Math.abs(hSum(loser)-50)} away from 50`;
@@ -479,7 +491,7 @@ function startPenalty(winner){
   if(loser.lossStreak>1){si.style.display='block';si.textContent=`🔥 ${loser.lossStreak}-loss streak! Draw ${n} penalty card${n>1?'s':''}!`;}
   else si.style.display='none';
   document.getElementById('penalty-instructions').textContent=`${loser.name}, flip ${n} card${n>1?'s':''} to reveal your penalt${n>1?'ies':'y'}!`;
-
+ 
   // Build 20-card grid — n of them are "real" chosen cards, rest are decoys (still funny though)
   const chosen=shuffle([...PENALTY_CARDS]).slice(0,n);
   const allShuffled=shuffle([...PENALTY_CARDS]);
@@ -487,7 +499,7 @@ function startPenalty(winner){
   const grid=document.getElementById('penalty-cards-grid');grid.innerHTML='';
   document.getElementById('penalty-continue-btn').style.display='none';
   let revealed=0;
-
+ 
   for(let i=0;i<20;i++){
     const isReal=positions.includes(i);
     const cardData=isReal?chosen[positions.indexOf(i)]:allShuffled[i%allShuffled.length];
@@ -511,9 +523,9 @@ function startPenalty(winner){
     grid.appendChild(slot);
   }
 }
-
+ 
 function afterPenalty(){showWinScreen(G.winner);}
-
+ 
 // ── AI TURN ──────────────────────────────────────────
 async function aiTurn(){
   if(G.over)return;
@@ -562,7 +574,7 @@ function aiSwap(ai){
   if(bt&&bg>0){const mc=ai.hand[bmi],tc=bt.hand[bti];ai.hand[bmi]=tc;bt.hand[bti]=mc;log(`swapped ${mc.label}↔${tc.label} with ${bt.name}`,ai.name);}
 }
 function aiEnd(){G.cur=(G.cur+1)%G.players.length;G.phase='draw';renderAll();updatePanel();const cp=G.players[G.cur];if(!cp.isHuman&&!G.over)setTimeout(aiTurn,600);}
-
+ 
 // ── WIN SCREEN ───────────────────────────────────────
 function showWinScreen(winner){
   setScreen('win-screen');
@@ -582,7 +594,7 @@ function showWinScreen(winner){
   }
   spawnConfetti();
 }
-
+ 
 // ── UTILS ────────────────────────────────────────────
 function log(action,player,card,isWin,isPenalty){
   const logEl=document.getElementById('log-panel');
@@ -598,7 +610,7 @@ function resetGame(){setScreen('title-screen');selectedCount=null;document.query
 function showRules(){
   const ov=document.getElementById('modal-overlay');
   document.getElementById('modal-title').textContent='HOW TO PLAY';
-  document.getElementById('modal-body').innerHTML=`<strong style="color:var(--gold)">Goal:</strong> Make your 5 number cards sum exactly <strong style="color:var(--green)">50</strong>.<br><br><strong style="color:var(--blue)">Each turn:</strong><br>1. Draw from Number or Special pile<br>2. Replace a card in your hand<br>3. Optionally play 1 special card<br><br><strong style="color:var(--purple)">Special Cards:</strong><br>±2/3/5 → adds/subtracts directly from your total<br>SWAP → exchange a card with an opponent<br>REPL ALL → replace cards one by one<br><br><strong style="color:var(--orange)">🎭 Penalty System:</strong><br>The player <em>farthest from 50</em> when someone wins flips cards from a secret pile of 20.<br><br>Loss streak → more penalty cards:<br>1 loss = 1 card &nbsp;·&nbsp; 2 streak = 2 cards &nbsp;·&nbsp; 3+ = 3 cards`;
+  document.getElementById('modal-body').innerHTML=`<strong style="color:var(--gold)">Goal:</strong> Make your 5 number cards sum exactly <strong style="color:var(--green)">50</strong>.<br><br><strong style="color:var(--blue)">Each turn:</strong><br>1. Draw from Number or Special pile<br>2. Replace a card in your hand<br>3. Optionally play 1 special card<br><br><strong style="color:var(--purple)">Special Cards (23 total):</strong><br>+1/+2/+3/+5 → adds to your total (4 of each)<br>−1/−2/−3/−4/−5 → subtracts (1 of each)<br>SWAP → exchange a card with an opponent (×2)<br><br><strong style="color:var(--orange)">🎭 Penalty System:</strong><br>The player <em>farthest from 50</em> when someone wins flips cards from a secret pile of 20.<br><br>Loss streak → more penalty cards:<br>1 loss = 1 card &nbsp;·&nbsp; 2 streak = 2 cards &nbsp;·&nbsp; 3+ = 3 cards`;
   document.getElementById('modal-cards').innerHTML='';
   const btns=document.getElementById('modal-btns');btns.innerHTML='';
   const c=document.createElement('button');c.className='btn-action';c.textContent='Got it!';c.onclick=()=>ov.classList.remove('open');btns.appendChild(c);
